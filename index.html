@@ -10,6 +10,8 @@
      <!-- CSS only -->
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
      <link rel="stylesheet" href="style.css">
+
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body class="bg-light">
     <header>
@@ -73,15 +75,19 @@
         <section id="category-count">
             <div class="container py-3">
                 <div class="row bg-white p-3">
-                    <h4 class="mb-0">4 items found for category Entertainment</h4>
+                    <h4 class="mb-0"><span id="card-found-number">
+
+                    </span> items found for category Entertainment</h4>
                 </div>
             </div>
         </section>
 
         <section id="show-card-container">
             <div class="container">
-                <div class="row">
-                    
+                <div class="row row-cols-1 gy-5" id="parent-card-row">
+                    <div class="col  order shadow g-3" id="parent-colums">
+                       
+                    </div>
                 </div>
             </div>
         </section>

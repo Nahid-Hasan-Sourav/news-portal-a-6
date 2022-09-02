@@ -71,6 +71,96 @@ const loadCategoryItemByid= async (category_id) =>{
 
 const  displayCategoryItemByID=(data)=>{
     console.log("Display Category Item by ID : " , data);
+
+    const parentRow=document.getElementById("parent-card-row");
+    parentRow.textContent='';
+
+    // const parentColumn=document.getElementById("parent-colums");
+   
+
+    data.data.forEach((item)=>{
+
+        console.log("Category Item by   ID : " , item);
+       
+        const div=document.createElement("div");
+        div.classList.add("col");
+
+        div.innerHTML=`
+        <div class="row gx-0 shadow" id="added-card-row">
+        <div class="col-lg-4 col-md-4 col-sm-12">
+            <img src="${item.image_url}" class="img-fluid w-100">
+        </div>
+        <div class="col-lg-8 col-md-8 col-sm-12">
+            <div class="p-3">
+                <h3>${item.title
+                }</h3>
+                <p>${item.details.slice(0,450)}<span>...</span></p>
+            </div>
+            <div class="row gx-0">
+            <div class="col-3    p-3">
+               <div class="author d-flex align-items-center justify-content-center">
+                <div class="author-image w-25">
+                    <img src="${item.author.img}" id="author-images" class="w-100 d-block  rounded-circle">
+                </div>
+               <div class="author-writter-date ps-3">
+                <p class="mb-0">${item.author.name}</p>
+                <p>${item.author.published_date.slice(0,10)}</p>
+               </div>
+               </div> 
+            </div>
+            <div class="col-3  ">
+                <div class="view  d-flex align-items-center h-100 justify-content-center">
+                    <div class=" d-flex h-50 justify-content-center align-items-center" id="view-icon">
+                    <p class="me-1"><i class="fa-regular fa-eye"></i></p>
+                    <p class="ms-1">1.7 M</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="rating d-flex align-items-center h-100 justify-content-center">
+                   <div class="rating-center">
+                    <span class="d-inline-block">
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </span>
+                    <span class="d-inline-block">
+                        <i class="fa-solid fa-star"></i>
+                    </span>
+                    <span class="d-inline-block">
+                        <i class="fa-solid fa-star"></i>
+                    </span>
+                    <span class="d-inline-block">
+                        <i class="fa-solid fa-star"></i>
+                    </span>
+                    <span class="d-inline-block">
+                        <i class="fa-solid fa-star"></i>
+                    </span>
+                   </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="arrows-icon d-flex align-items-center h-100 justify-content-center">
+                    <div class="arrow-icon-center">
+                        <span class="d-inline-block">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+        
+        `
+        parentRow.appendChild(div);
+
+        // console.log("Length : " , parentRow.children.length);
+        // length=parentRow.children.length;
+
+
+    })
+   console.log("Length : " , parentRow.children.length);
+   const cardFoundNumber=document.getElementById("card-found-number");
+   cardFoundNumber.innerText=parentRow.children.length;
 }
 
 

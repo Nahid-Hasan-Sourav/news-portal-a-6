@@ -51,12 +51,12 @@ const toggleSpiner = (isLoading) => {
     const spinner=document.getElementById('spinner-loader');
     if(isLoading){
         spinner.classList.remove('d-none');
-        console.log("loading show")
+        // console.log("loading show")
     }
 
     else{
         spinner.classList.add('d-none');
-        console.log("remove it")
+        // console.log("remove it")
     }
     
 }
@@ -89,12 +89,12 @@ const selectCategoryItemByid = (category_id) => {
 const loadCategoryItemByid= async (category_id) =>{
   
     const url = `https://openapi.programming-hero.com/api/news/category/0${category_id}`;
-    console.log(url);
+    // console.log(url);
     
     try{
         const res = await fetch(url);
         const data= await res.json();
-        console.log("Display Category Item by ID : " , data);
+        // console.log("Display Category Item by ID : " , data);
         displayCategoryItemByID(data);
     }
 
@@ -127,7 +127,7 @@ const  displayCategoryItemByID=(data)=>{
     parentRow.textContent='';
 
     // const parentColumn=document.getElementById("parent-colums");
-   console.log(data.data);
+//    console.log(data.data);
 
    const sortData = data.data.sort((a, b) => {
     return a.total_view - b.total_view;
@@ -230,12 +230,12 @@ const  displayCategoryItemByID=(data)=>{
 const generateModalCardItemByid= async (category_id) =>{
   
     const url = ` https://openapi.programming-hero.com/api/news/${category_id}`;
-    console.log(url);
+    // console.log(url);
     
     try{
         const res = await fetch(url);
         const data= await res.json();
-        console.log("Display Category Item by ID : " , data);
+        // console.log("Display Category Item by ID : " , data);
        displayModalCard(data);
     }
 

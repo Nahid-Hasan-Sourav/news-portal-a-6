@@ -13,3 +13,8 @@ nav .headdline{
     border-radius: 5px;
     background-color: rgb(130, 130, 234);
 }
+
+#author-images{
+    width: 40px;
+    height: 40px;
+}

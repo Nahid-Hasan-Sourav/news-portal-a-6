@@ -66,7 +66,7 @@ const selectCategoryItemByid = (category_id) => {
 
     toggleSpiner(true);
    
-    console.log("After Item Click: " + category_id);
+    // console.log("After Item Click: " + category_id);
     loadCategoryItemByid(category_id);
     
 
@@ -106,9 +106,9 @@ const loadCategoryItemByid= async (category_id) =>{
 
 
 const  displayCategoryItemByID=(data)=>{
-    console.log("Display Category Item by ID : " , data);
+    // console.log("Display Category Item by ID : " , data);
     // toggleSpiner(true);
-    console.log("Length : " , data.data.length);
+    // console.log("Length : " , data.data.length);
     // console.log("Length : " , parentRow.children.length);
     const cardFoundNumber=document.getElementById("card-found-number");
     const length=data.data.length
@@ -247,7 +247,7 @@ const generateModalCardItemByid= async (category_id) =>{
 
 const  displayModalCard =(data)=>{
     // console.log("Modal Data : ", data.data[0].author.name);
-    console.log("Modal Data : ", data.data[0]);
+    // console.log("Modal Data : ", data.data[0]);
 
     const modalBody=document.getElementById("modal-body");
     modalBody.innerHTML='';
@@ -309,7 +309,7 @@ const  displayModalCard =(data)=>{
 
 
 const ModalGenerate = (id) =>{
-    console.log("Modal ID: ",id);
+    // console.log("Modal ID: ",id);
 
     generateModalCardItemByid(id);
 

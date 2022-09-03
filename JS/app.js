@@ -256,6 +256,49 @@ const  displayModalCard =(data)=>{
     <h3 class="mb-2">${data.data[0].title}</h3>
     <img src="${data.data[0].image_url}" class="img-fluid">
     <p>${data.data[0].details ? data.data[0].details.slice(0,400) : ''}</p>
+
+    <div class="author d-flex align-items-center">
+    <div class="author-image">
+        <img src="${data.data[0].author.img}" id="author-images" class="d-block  rounded-circle">
+    </div>
+   <div class="author-writter-date ps-3">
+    <p class="mb-0 fw-bold">${data.data[0].author.name ? data.data[0].author.name :"N/A"}</p>
+    <small>${data.data[0].author.published_date ? data.data[0].author.published_date : "not found"}</small>
+   </div>
+   </div>
+
+    <div class="d-flex justify-content-around">
+    
+    <div class="view  d-flex align-items-center h-100">
+    <div class=" d-flex h-50 justify-content-center align-items-center" id="view-icon">
+    <p class="me-1"><i class="fa-regular fa-eye"></i></p>
+    <p class="ms-1 fw-bold">${data.data[0].total_view ? data.data[0].total_view : "No View"
+    }</p>
+    </div>
+    </div>
+    
+    <div class="rating d-flex align-items-center h-100 ">
+                   <div class="rating-center">
+                    <span class="d-inline-block">
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </span>
+                    <span class="d-inline-block">
+                        <i class="fa-solid fa-star"></i>
+                    </span>
+                    <span class="d-inline-block">
+                        <i class="fa-solid fa-star"></i>
+                    </span>
+                    <span class="d-inline-block">
+                        <i class="fa-solid fa-star"></i>
+                    </span>
+                    <span class="d-inline-block">
+                        <i class="fa-solid fa-star"></i>
+                    </span>
+                   </div>
+                </div>
+    
+    </div>
+
     `
     modalBody.appendChild(div);
 }

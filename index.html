@@ -62,7 +62,7 @@
          <div class="container">
             <div class="row gx-0 py-3 ">
               <div class="category  " >
-              <ul class="navbar-nav d-flex flex-lg-row flex-md-column flex-sm-column flex-column " id="category-ul">
+              <ul class="navbar-nav d-flex justify-content-center flex-lg-row flex-md-column flex-sm-column flex-column " id="category-ul">
              
                   
               </ul>
@@ -81,6 +81,30 @@
                   <span class="fw-bold fs-2">Loading...</span>
               
               </div>
+        </section>
+
+        <section class="container d-flex justify-content-evenly align-items-center my-4  p-3 row">
+            <div class="col-md-6 col-sm-12 d-flex align-items-center justify-content-center">
+                <h5>Sort By View</h5>
+                <div class="bg-light px-3 py-1 rounded">
+                    <div class="dropdown">
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Default
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Total Views</a></li>
+                            <li><a class="dropdown-item" href="#">Author</a></li>
+                            <li><a class="dropdown-item" href="#">Date</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex col-md-6 col-sm-12 justify-content-center align-items-center">
+                <button class="btn btn-danger me-2">Today's Pick</button>
+                <button class="btn btn-outline-primary ms-2">Trending</button>
+            </div>
         </section>
 
         <section id="category-count">

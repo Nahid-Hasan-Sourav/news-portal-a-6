@@ -14,7 +14,73 @@ nav .headdline{
     background-color: rgb(130, 130, 234);
 }
 
+
 #author-images{
     width: 40px;
     height: 40px;
 }
+.index-file-news{
+    font-size: 20px !important;
+    color: red;
+}
+/* #blog-item{
+    color: blue;
+    font-size: 20px;
+} */
+/* #news{
+    color: blue;
+    font-size: 20px;
+} */
+
+
+/* RESPONSIVE FOR MOBILE VIEW START HERE */
+@media (max-width: 575.98px) {
+   .card-imgs{
+    width:100% !important;
+   
+   }
+   .dynamic-card-img{
+    display: flex;
+    justify-content: center;
+   }
+  
+   #card-footer-row{
+    flex-direction: column;
+    justify-content: center;
+   }
+   .col-3s{
+    width: 100%;
+   }
+  
+   .cols-inline{
+    display: inline;
+   }
+
+  }
+  
+  /* RESPONSIVE FOR TAB VIEW START HERE */
+  @media (min-width: 576px) and (max-width: 767.98px) {
+   
+  
+
+    
+  }
+  
+  @media (min-width: 768px) and (max-width: 991.98px) {
+   
+  
+
+    
+  }
+  @media (min-width: 992px) and (max-width: 1199.98px) {
+   
+  
+
+    
+  }
+  @media (min-width: 1200px) and (max-width:1399.98px) {
+   
+    
+  }
+ 
+  

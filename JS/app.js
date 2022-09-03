@@ -31,7 +31,7 @@ const displayCategoryItem = (category) =>{
         li.classList.add("nav-item");
 
         li.innerHTML=`
-        <a href="#" class=" nav-link mx-3 fs-5" onclick="selectCategoryItemByid(${item.category_id})">${item.category_name}</a>
+        <a href="#" class=" nav-link mx-3 fs-5 p-1" onclick="selectCategoryItemByid(${item.category_id})">${item.category_name}</a>
         `
 
         categoryUl.appendChild(li);
@@ -45,20 +45,22 @@ const displayCategoryItem = (category) =>{
 
 const selectCategoryItemByid = (category_id) => {
 
-
+    
+    
     console.log("After Item Click: " + category_id);
     loadCategoryItemByid(category_id);
 
 }
 
 const loadCategoryItemByid= async (category_id) =>{
+  
     const url = `https://openapi.programming-hero.com/api/news/category/0${category_id}`;
     console.log(url);
-
+    
     try{
         const res = await fetch(url);
         const data= await res.json();
-        // console.log("Display Category Item by ID : " , data);
+        console.log("Display Category Item by ID : " , data);
         displayCategoryItemByID(data);
     }
 
@@ -72,14 +74,28 @@ const loadCategoryItemByid= async (category_id) =>{
 const  displayCategoryItemByID=(data)=>{
     console.log("Display Category Item by ID : " , data);
 
+    console.log("Length : " , data.data.length);
+    // console.log("Length : " , parentRow.children.length);
+    const cardFoundNumber=document.getElementById("card-found-number");
+    const length=data.data.length
+     if(length>0){
+         cardFoundNumber.innerText=`${length} items found `;
+     }
+     else if(length===0){
+         cardFoundNumber.innerText="Sorry!! No Card Found!!!";
+     }
+
     const parentRow=document.getElementById("parent-card-row");
+    // console.log(parentRow)
     parentRow.textContent='';
 
     // const parentColumn=document.getElementById("parent-colums");
-   
-
-    data.data.forEach((item)=>{
-
+   console.log(data.data);
+     
+     data.data.forEach((item)=>{
+        const date=item.author.published_date;
+        // console.log("length of date ",date.slice(0,10));
+        
         console.log("Category Item by   ID : " , item);
        
         const div=document.createElement("div");
@@ -94,7 +110,7 @@ const  displayCategoryItemByID=(data)=>{
             <div class="p-3">
                 <h3>${item.title
                 }</h3>
-                <p>${item.details.slice(0,450)}<span>...</span></p>
+                <p>${item.details.slice(0,500)}....</p>
             </div>
             <div class="row gx-0">
             <div class="col-3    p-3">
@@ -103,8 +119,8 @@ const  displayCategoryItemByID=(data)=>{
                     <img src="${item.author.img}" id="author-images" class="w-100 d-block  rounded-circle">
                 </div>
                <div class="author-writter-date ps-3">
-                <p class="mb-0">${item.author.name}</p>
-                <p>${item.author.published_date.slice(0,10)}</p>
+                <p class="mb-0">${item.author.name ? item.author.name :"N/A"}</p>
+                <p>${item.author.published_date ? item.author.published_date.slice(0,10) : "not found"}</p>
                </div>
                </div> 
             </div>
@@ -158,13 +174,11 @@ const  displayCategoryItemByID=(data)=>{
 
 
     })
-   console.log("Length : " , parentRow.children.length);
-   const cardFoundNumber=document.getElementById("card-found-number");
-   cardFoundNumber.innerText=parentRow.children.length;
+
 }
 
 
 
 
-
+loadCategoryItemByid(08)
 loadCategory();

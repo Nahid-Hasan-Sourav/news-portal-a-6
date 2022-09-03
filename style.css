@@ -7,3 +7,9 @@ nav .headdline{
     height: 80%;
     justify-content: center;
 } */
+
+.category ul li a:focus{
+    /* padding: 2px 3px; */
+    border-radius: 5px;
+    background-color: rgb(130, 130, 234);
+}

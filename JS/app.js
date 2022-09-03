@@ -148,7 +148,7 @@ const  displayCategoryItemByID=(data)=>{
         <div class="row gx-0 shadow" id="added-card-row" onclick="ModalGenerate('${item._id}')" data-bs-toggle="modal" data-bs-target="#exampleModal" >
         <div class="col-lg-4 col-md-4 col-sm-12 dynamic-card-img">
             <img src="${item.thumbnail_url
-            }" class="img-fluid p-3 d-block" class="card-imgs">
+            }" class="img-fluid p-3 d-block" class="card-imgs ">
         </div>
         <div class="col-lg-8 col-md-8 col-sm-12">
             <div class="p-3">

@@ -135,7 +135,7 @@ const  displayCategoryItemByID=(data)=>{
     const reverseSortData = sortData.reverse();
 
      
-     data.data.forEach((item)=>{
+    reverseSortData.forEach((item)=>{
         const date=item.author.published_date;
         // console.log("length of date ",date.slice(0,10));
         

@@ -116,7 +116,7 @@ const  displayCategoryItemByID=(data)=>{
          cardFoundNumber.innerText=`${length} items found `;
      }
      else if(length===0){
-         cardFoundNumber.innerText="Sorry!! No Card Found!!!";
+         cardFoundNumber.innerText="Sorry!! No Items Found!!!";
          toggleSpiner(false);
      }
 

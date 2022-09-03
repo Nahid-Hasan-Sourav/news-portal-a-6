@@ -267,7 +267,7 @@ const  displayModalCard =(data)=>{
    </div>
    </div>
 
-    <div class="d-flex justify-content-around">
+    <div class="d-flex justify-content-between mt-2">
     
     <div class="view  d-flex align-items-center h-100">
     <div class=" d-flex h-50 justify-content-center align-items-center" id="view-icon">

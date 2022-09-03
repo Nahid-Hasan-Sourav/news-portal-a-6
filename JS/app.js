@@ -143,7 +143,8 @@ const  displayCategoryItemByID=(data)=>{
         div.innerHTML=`
         <div class="row gx-0 shadow" id="added-card-row" onclick="ModalGenerate('${item._id}')" data-bs-toggle="modal" data-bs-target="#exampleModal" >
         <div class="col-lg-4 col-md-4 col-sm-12">
-            <img src="${item.image_url}" class="img-fluid p-3">
+            <img src="${item.thumbnail_url
+            }" class="img-fluid p-3">
         </div>
         <div class="col-lg-8 col-md-8 col-sm-12">
             <div class="p-3">
@@ -252,8 +253,9 @@ const  displayModalCard =(data)=>{
     div.classList.add(".card");
 
     div.innerHTML=`
-    
+    <h3 class="mb-2">${data.data[0].title}</h3>
     <img src="${data.data[0].image_url}" class="img-fluid">
+    <p>${data.data[0].details ? data.data[0].details.slice(0,400) : ''}</p>
     `
     modalBody.appendChild(div);
 }
